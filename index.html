@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="pricepagec.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    body {
+      display: grid;
+      min-height: 100vh;
+      justify-content: center;
+      align-content: center;
+      background-color: whitesmoke;
+      padding: 20px;
+    }
+    .pricing-container {
+      display: flex;
+      gap: 20px;
+      padding: 0 30px;
+    }
+    .pricing-card {
+      display: grid;
+      justify-content: left;
+      min-width: 200px;
+      min-height: 500px;
+      background-color: white;
+      padding: 20px 35px;
+      border-radius: 8%;
+      font-family: "Roboto Condensed", sans-serif;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+
+    li {
+      display: grid;
+      justify-content: left;
+      margin-bottom: 20px;
+    }
+    .features-basic {
+      position: relative;
+      font-size: 25px;
+      padding-left: 50px;
+      margin: 0;
+      width: 190px;
+    }
+    .features-basic > li:nth-child(n + 2) {
+      opacity: 0.5;
+    }
+
+    .features-basic > li:nth-child(1)::before {
+      content: "✓";
+      padding-right: 10px;
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+    .features-basic > li:nth-child(n + 2)::before {
+      content: "✕";
+      padding-right: 10px;
+      position: absolute;
+      left: 0;
+      opacity: 0.8;
+    }
+    .features-standard {
+      position: relative;
+      font-size: 25px;
+      padding-left: 50px;
+      margin: 0;
+      width: 190px;
+    }
+    .features-standard > li:nth-child(n + 3) {
+      opacity: 0.5;
+    }
+
+    .features-standard > li:nth-child(n + 1)::before {
+      content: "✓";
+      padding-right: 10px;
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+    .features-standard > li:nth-child(n + 3)::before {
+      content: "✕";
+      padding-right: 10px;
+      position: absolute;
+      left: 0;
+      opacity: 0.8;
+    }
+    .features-premium {
+      position: relative;
+      font-size: 25px;
+      padding-left: 50px;
+      margin: 0;
+      width: 190px;
+    }
+    .features-premium > li:nth-child(n + 5) {
+      opacity: 0.5;
+    }
+
+    .features-premium > li:nth-child(n + 1)::before {
+      content: "✓";
+      padding-right: 10px;
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+    .features-premium > li:nth-child(5)::before {
+      content: "✕";
+      padding-right: 10px;
+      position: absolute;
+      left: 0;
+      opacity: 0.8;
+    }
+    .features-enterprise {
+      position: relative;
+      font-size: 25px;
+      padding-left: 50px;
+      margin: 0;
+      width: 190px;
+    }
+
+    .features-enterprise > li:nth-child(n + 1)::before {
+      content: "✓";
+      padding-right: 10px;
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+
+    span {
+      padding-left: 0;
+      font-weight: 250;
+      padding-bottom: 0;
+      font-size: 20px;
+    }
+    .price-tag {
+      margin: 0;
+    }
+    .button-container {
+      padding-top: 20px;
+      display: grid;
+      justify-content: center;
+    }
+    button {
+      background-color: rgb(123, 19, 234);
+      font-family: "Roboto Condensed", sans-serif;
+      color: white;
+      font-weight: bolder;
+      font-size: 30px;
+      border-radius: 10px;
+      padding: 15px 110px;
+    }
+    h1 {
+      padding-bottom: 20px;
+    }
+    .pricing-card:hover {
+      transform: scale(1.2);
+      background-color: darkblue;
+      color: white;
+    }
+    .pricing-card:active {
+      transform: scale(0.9);
+    }
+    .discount {
+      background-color: white;
+      padding: 5px 10px;
+      color: black;
+      font-weight: bold;
+      border-radius: 3px;
+    }
+    .pricing-card.pro .discount {
+      background-color: white;
+      color: black;
+    }
+  </style>
+  <body>
+    <div class="pricing-container">
+      <div class="pricing-card">
+        <h1>Intro</h1>
+        <ul class="features-basic">
+          <li>Upload Video up to 720p Resolution</li>
+          <li>Attachment & Post Scheduling</li>
+          <li>Set your rates</li>
+          <li>Exclusive Deals</li>
+          <li>Advanced Statistics</li>
+        </ul>
+        <h1 class="price-tag">
+          <span style="font-size: 25px">$</span>123<span>/month</span>
+        </h1>
+
+        <div class="button-container">
+          <button type="button">Choose</button>
+        </div>
+      </div>
+      <div class="pricing-card">
+        <h1>Base</h1>
+        <ul class="features-standard">
+          <li>Upload Video up to 720p Resolution</li>
+          <li>Attachment & Post Scheduling</li>
+          <li>Set your rates</li>
+          <li>Exclusive Deals</li>
+          <li>Advanced Statistics</li>
+        </ul>
+        <h1 class="price-tag">
+          <span style="font-size: 25px">$</span>289<span>/month</span>
+        </h1>
+
+        <div class="button-container">
+          <button type="button">Choose</button>
+        </div>
+      </div>
+      <div class="pricing-card pro">
+        <h1>
+          Pro <span style="padding-left: 200px"></span>
+          <span class="discount">Save $40</span>
+        </h1>
+        <ul class="features-premium">
+          <li>Upload Video with HD Resolution</li>
+          <li>Attachment & Post Scheduling</li>
+          <li>Set your rates</li>
+          <li>Exclusive Deals</li>
+          <li>Advanced Statistics</li>
+        </ul>
+        <h1 class="price-tag">
+          <span style="font-size: 25px">$</span>419<span>/month</span>
+        </h1>
+
+        <div class="button-container">
+          <button type="button">
+            <span style="font-size: 25px; font-weight: 900">Try 1 month</span>
+          </button>
+        </div>
+      </div>
+      <div class="pricing-card">
+        <h1>Enterprise</h1>
+        <ul class="features-enterprise">
+          <li>Upload Video with HD Resolution</li>
+          <li>Attachment & Post Scheduling</li>
+          <li>Set your rates</li>
+          <li>Exclusive Deals</li>
+          <li>Advanced Statistics</li>
+        </ul>
+        <h1 class="price-tag">
+          <span style="font-size: 25px">$</span>500<span>/month</span>
+        </h1>
+
+        <div class="button-container">
+          <button type="button">Choose</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
